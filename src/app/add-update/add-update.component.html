@@ -1,0 +1,55 @@
+<section id="contact" style="background-color: white;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 style="color: #2C3E50;">Add Product</h2>
+        <hr class="star-primary">
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <form>
+          <div class="form-group row">
+            <label for="name" class="col-sm-4 col-form-label" style="color: #2C3E50;    text-align: right;">Name:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="name"  placeholder="Name">{{product.productName}}
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="type" class="col-sm-4 col-form-label" style="color: #2C3E50;    text-align: right;">Type:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="type"  placeholder="Type">{{product.type}}
+            </div>
+          </div>
+           <div class="form-group row">
+            <label for="cost" class="col-sm-4 col-form-label" style="color: #2C3E50;    text-align: right;">Cost:</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="cost"  placeholder="Cost">{{product.price}}
+            </div>
+          </div>
+           <div class="form-group row">
+            <label for="discount" class="col-sm-4 col-form-label" style="color: #2C3E50;    text-align: right;">Discount:</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" id="discount"  placeholder="Discount">{{product.discountPercentage}}
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4" style="color: #2C3E50;     text-align: right;">Include In Offer List:</label>
+            <div class="col-sm-4">
+              <div class="form-check col-sm-2">
+                <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" style="float:left;">
+          </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-2 col-sm-8">
+              <button type="submit" class="btn btn-primary">Add Product</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

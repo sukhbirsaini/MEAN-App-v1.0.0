@@ -1,0 +1,61 @@
+[{
+  "productId": 1,
+  "productName": "Chair",
+  "Type":"furniture",
+  "isOffer": true,
+  "price": 10,
+  "available": true,
+  "discountPercentage": "101",
+  "inCart": false,
+  "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+}, {
+  "productId": 2,
+  "productName": "Carpet",
+  "Type":"furniture",
+  "isOffer": false,
+  "price": 10,
+  "available": true,
+  "discountPercentage": "10",
+  "inCart": false,
+  "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+}, {
+  "productId": 3,
+  "productName": "Dinning Table Small",
+  "Type":"furniture",
+  "isOffer": false,
+  "price": 10,
+  "available": true,
+  "discountPercentage": "10",
+  "inCart": false,
+  "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+}, {
+  "productId": 4,
+  "productName": "Dinning Table Medium",
+  "Type":"furniture",
+  "isOffer": false,
+  "price": 10,
+  "available": true,
+  "discountPercentage": "10",
+  "inCart": false,
+  "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+}, {
+  "productId": 5,
+  "productName": "Dinning Table Large",
+  "Type":"furniture",
+  "isOffer": true,
+  "price": 10,
+  "available": true,
+  "discountPercentage": "10",
+  "inCart": false,
+  "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+}, {
+  "productId": 6,
+  "productName": "Side Chair",
+  "Type":"furniture",
+  "isOffer": true,
+  "price": 10,
+  "available": true,
+  "discountPercentage": "10",
+  "inCart": false,
+  "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+}]
