@@ -1,7 +1,7 @@
 [{
   "productId": 1,
   "productName": "Chair",
-  "Type":"furniture",
+  "type":"furniture",
   "isOffer": true,
   "price": 10,
   "available": true,
@@ -11,7 +11,7 @@
 }, {
   "productId": 2,
   "productName": "Carpet",
-  "Type":"furniture",
+  "type":"furniture",
   "isOffer": false,
   "price": 10,
   "available": true,
@@ -21,7 +21,7 @@
 }, {
   "productId": 3,
   "productName": "Dinning Table Small",
-  "Type":"furniture",
+  "type":"furniture",
   "isOffer": false,
   "price": 10,
   "available": true,
@@ -31,7 +31,7 @@
 }, {
   "productId": 4,
   "productName": "Dinning Table Medium",
-  "Type":"furniture",
+  "type":"furniture",
   "isOffer": false,
   "price": 10,
   "available": true,
@@ -41,7 +41,7 @@
 }, {
   "productId": 5,
   "productName": "Dinning Table Large",
-  "Type":"furniture",
+  "type":"furniture",
   "isOffer": true,
   "price": 10,
   "available": true,
@@ -51,7 +51,7 @@
 }, {
   "productId": 6,
   "productName": "Side Chair",
-  "Type":"furniture",
+  "type":"furniture",
   "isOffer": true,
   "price": 10,
   "available": true,

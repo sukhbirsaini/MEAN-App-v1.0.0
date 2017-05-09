@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { LocalStorageService } from "angular-2-local-storage";
 
 
@@ -13,12 +13,13 @@ import { IProduct } from 'app/iproduct';
 
 @Injectable()
 export class ProductService {
-    private _productUrl = 'src/api/products/products.json';
+    private _productUrl = 'http://localhost:3000/api/';
 
     constructor(private _http: Http, private localStorageService: LocalStorageService) { }
 
+
     getProducts(): Observable<IProduct[]> {
-        return this._http.get(this._productUrl)
+        return this._http.get(this._productUrl + "getProducts")
             .map((response: Response) => {
                 let products = <IProduct[]>response.json();
                 let productIdFromLocalStorage: any = this.localStorageService.get("addedToCart");
@@ -38,7 +39,7 @@ export class ProductService {
     }
 
     getAllProducts(): Observable<IProduct[]> {
-        return this._http.get(this._productUrl)
+        return this._http.get(this._productUrl + "getProducts")
             .map((response: Response) => {
                 let products = <IProduct[]>response.json();
                 return products;
@@ -49,39 +50,49 @@ export class ProductService {
 
     getProduct(id: number): Observable<IProduct> {
         return this.getAllProducts()
-            .map((products: IProduct[]) => { let product: IProduct =  products.find(p => p.productId === id); console.log(product); return product; });
+            .map((products: IProduct[]) => { let product: IProduct = products.find(p => p.productId === id); return product; });
     }
 
-    updateProduct(product: IProduct): void {
-        this.getProducts()
-            .map((products: IProduct[]) => {
-                let productFromProducts = products.find(p => p.productId === product.productId);
-                if (productFromProducts) {
-                    productFromProducts = product;
-                }
-            });
+    addProduct(product: IProduct): Observable<IProduct> {
+        debugger;
+        let options = new RequestOptions({
+            headers: new Headers({ 'Content-Type': 'application/json;charset=UTF-8' })
+        });
+        return this._http.put(this._productUrl + "saveProduct", JSON.stringify(product), options)
+            .map((response: Response) => {
+                debugger;
+                let products = <IProduct[]>response.json();
+                return products;
+            })
+            .catch(this.handleError);
     }
 
-    // this.markThreadAsRead
-    //   .map( (thread: Thread) => {
-    //     return (messages: Message[]) => {
-    //       return messages.map( (message: Message) => {
-    //         // note that we're manipulating `message` directly here. Mutability
-    //         // can be confusing and there are lots of reasons why you might want
-    //         // to, say, copy the Message object or some other 'immutable' here
-    //         if (message.thread.id === thread.id) {
-    //           message.isRead = true;
-    //         }
-    //         return message;
-    //       });
-    //     };
-    //   })
-    //   .subscribe(this.updates);
+    // updateProduct(product: IProduct): Observable<IProduct> {
+    //     let options = new RequestOptions({
+    //         headers: new Headers({ 'Content-Type': 'application/json;charset=UTF-8' })
+    //     });
+    //     return this._http.put(`${this._productUrl}`, JSON.stringify(product), options)
+    //         .map((response: Response) => {
+    //             let products = <IProduct[]>response.json();
+    //             return products;
+    //         })
+    //         .do(data => console.log('All: ' + JSON.stringify(data)))
+    //         .catch(this.handleError);
+    // }
 
-
+    updateProduct(product: IProduct): Observable<IProduct> {
+        let options = new RequestOptions({
+            headers: new Headers({ 'Content-Type': 'application/json;charset=UTF-8' })
+        });
+        return this._http.put(this._productUrl + "updateProduct", JSON.stringify(product), options)
+            .map((response: Response) => {
+                let products = <IProduct[]>response.json();
+                return products;
+            })
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
     private handleError(error: Response) {
-        // in a real world app, we may send the server to some remote logging infrastructure
-        // instead of just logging it to the console
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
     }

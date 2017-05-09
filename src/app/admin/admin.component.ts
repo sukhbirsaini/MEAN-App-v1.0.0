@@ -12,21 +12,28 @@ export class AdminComponent implements OnInit {
   imageWidth: number = 50;
   imageMargin: number = 2;
   listFilter: string;
+  listFilterValue: string;
   errorMessage: string;
 
   products: IProduct[];
 
   constructor(private _productService: ProductService, private localStorageService: LocalStorageService) {
-    
+
   }
 
   addProduct(): void {
 
   }
-
+  search(): void {
+    this.listFilterValue = this.listFilter;
+  }
+  clear(): void {
+    this.listFilterValue = this.listFilter = '';
+  }
+  
   editProduct(event): void {
     var idOfSelectedProduct = event.target.id;
- 
+
   }
 
   ngOnInit(): void {

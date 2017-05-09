@@ -1,19 +1,28 @@
 <div class='panel-body'>
   <div class='row'>
     <div class='col-md-2'>Search:</div>
-    <div class='col-md-4'>
+    <div class='col-md-2'>
       <input type='text' [(ngModel)]='listFilter' />
     </div>
-    <div class="col-md-6">
+    <div class='col-md-2'><button class='btn btn-primary' (click)='search()'>
+                                Search
+                            </button>
+    </div>
+    <div *ngIf='listFilterValue' class='col-md-3'><button class='btn btn-primary' (click)='clear()'>
+                                Clear Search Results
+                            </button>
+    </div>
+    <div class="col-md-2">
       <button class='btn btn-primary' [routerLink]="['/product']">
                                 Add New Product
                             </button>
+
     </div>
   </div>
-  <div class='panel-heading' *ngIf='listFilter'>
+  <div class='panel-heading' *ngIf='listFilterValue'>
     <div class='row'>
       <div class='col-md-6'>
-        <h3>Filtered by: {{listFilter}} </h3>
+        <h3>Filtered by: {{listFilterValue}} </h3>
       </div>
       <div class='panel-heading'>
         Search Results
@@ -30,7 +39,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor='let product of (products | productFilter:listFilter)'>
+            <tr *ngFor='let product of (products | productFilter:listFilterValue)'>
               <td>
                 <img [src]='product.imageUrl' [title]='product.productName | uppercase' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
               </td>
@@ -54,7 +63,7 @@
   </div>
 
   <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
-  <div class='panel panel-primary' *ngIf='!listFilter'>
+  <div class='panel panel-primary' *ngIf='!listFilterValue'>
     <div class='panel-heading'>
       Manage Products
     </div>

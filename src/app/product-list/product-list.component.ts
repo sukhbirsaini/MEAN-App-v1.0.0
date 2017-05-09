@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
   imageMargin: number = 2;
   showImage: boolean = false;
   listFilter: string;
+  listFilterValue: string;
   errorMessage: string;
 
   products: IProduct[];
@@ -20,9 +21,14 @@ export class ProductListComponent implements OnInit {
   constructor(private _productService: ProductService, private localStorageService: LocalStorageService) {
 
   }
+  search(): void {
+    this.listFilterValue = this.listFilter;
+  }
+  clear(): void {
+    this.listFilterValue = this.listFilter = '';
+  }
 
   toggleButton(event): void {
-    // this.showImage = !this.showImage;
     var arr = [];
     var idOfSelectedProduct = event.target.id;
     let product: IProduct = this.products.find((product: IProduct) => product.productId == parseInt(idOfSelectedProduct));
@@ -40,16 +46,11 @@ export class ProductListComponent implements OnInit {
       arr.splice(index, 1);
     }
     this.localStorageService.set("addedToCart", arr);
-    debugger;
   }
 
   ngOnInit(): void {
     this._productService.getProducts()
       .subscribe(products => this.products = products,
       error => this.errorMessage = <any>error);
-  }
-
-  onRatingClicked(message: string): void {
-    //this.pageTitle = 'Product List: ' + message;
   }
 }
