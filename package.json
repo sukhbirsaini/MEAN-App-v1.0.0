@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node .\\server\\server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,6 +24,7 @@
     "axios": "^0.16.1",
     "body-parser": "^1.17.1",
     "bootstrap": "^4.0.0-alpha.6",
+    "botbuilder": "^3.8.3",
     "core-js": "^2.4.1",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",

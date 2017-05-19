@@ -8,18 +8,21 @@ const bodyParser = require('body-parser');
 
 // Get our API routes
 const api = require('./routes/api.js');
-
+const messages = require('./routes/messages.js');
 const app = express();
 
 // Parsers for POST data
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // Set our api routes
 app.use('/api', api);
+app.use('/messages', messages);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
