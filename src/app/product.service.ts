@@ -14,6 +14,7 @@ import { IProduct } from 'app/iproduct';
 @Injectable()
 export class ProductService {
     private _productUrl = 'https://inventorymanagementapp.herokuapp.com/api/';
+    
 
     constructor(private _http: Http, private localStorageService: LocalStorageService) { }
 
