@@ -7,7 +7,8 @@ mongoose.Promise = Promise;
 var Schema = mongoose.Schema;
 var autoIncrement = require('mongoose-auto-increment');
 
-var connection = mongoose.connect('mongodb://sukhbirsaini:Sukhi@93@inventory-shard-00-01-5c6mc.mongodb.net:27017,inventory-shard-00-01-5c6mc.mongodb.net:27017,inventory-shard-00-02-5c6mc.mongodb.net:27017/inventory?ssl=true&replicaSet=Inventory-shard-0&authSource=admin');
+var connection = mongoose.connect("mongodb://sukhbirsaini:Sukhi@93@inventory-shard-00-00-5c6mc.mongodb.net:27017,inventory-shard-00-01-5c6mc.mongodb.net:27017,inventory-shard-00-02-5c6mc.mongodb.net:27017/inventory?ssl=true&replicaSet=Inventory-shard-0&authSource=admin");
+
 autoIncrement.initialize(connection);
 var openConnection = function () {
   var db = mongoose.connection;
