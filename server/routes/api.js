@@ -11,8 +11,8 @@ var mongoose = require('mongoose');
 mongoose.Promise = Promise;
 var Schema = mongoose.Schema;
 var autoIncrement = require('mongoose-auto-increment');
-console.log(hrokuKeyConfigs.accessKeyId);
-var connection = mongoose.connect("mongodb://" + hrokuKeyConfigs.accessKeyId + ":" + hrokuKeyConfigs.secretAccessKey + "@inventory-shard-00-00-5c6mc.mongodb.net:27017,inventory-shard-00-01-5c6mc.mongodb.net:27017,inventory-shard-00-02-5c6mc.mongodb.net:27017/inventory?ssl=true&replicaSet=Inventory-shard-0&authSource=admin");
+console.log(hrokuKeyConfigs.accessKeyId.toString('utf-8'));
+var connection = mongoose.connect("mongodb://" + hrokuKeyConfigs.accessKeyId.toString('utf-8') + ":" + hrokuKeyConfigs.secretAccessKey.toString('utf-8') + "@inventory-shard-00-00-5c6mc.mongodb.net:27017,inventory-shard-00-01-5c6mc.mongodb.net:27017,inventory-shard-00-02-5c6mc.mongodb.net:27017/inventory?ssl=true&replicaSet=Inventory-shard-0&authSource=admin");
 
 autoIncrement.initialize(connection);
 var openConnection = function () {
