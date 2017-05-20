@@ -7,7 +7,7 @@ mongoose.Promise = Promise;
 var Schema = mongoose.Schema;
 var autoIncrement = require('mongoose-auto-increment');
 
-var connection = mongoose.connect("mongodb://sukhbirsaini:ztOSgIgz2LqJsQzm@inventory-shard-00-00-5c6mc.mongodb.net:27017,inventory-shard-00-01-5c6mc.mongodb.net:27017,inventory-shard-00-02-5c6mc.mongodb.net:27017/<DATABASE>?ssl=true&replicaSet=Inventory-shard-0&authSource=admin");
+var connection = mongoose.connect("mongodb://sukhbirsaini:ztOSgIgz2LqJsQzm@inventory-shard-00-00-5c6mc.mongodb.net:27017,inventory-shard-00-01-5c6mc.mongodb.net:27017,inventory-shard-00-02-5c6mc.mongodb.net:27017/inventory?ssl=true&replicaSet=Inventory-shard-0&authSource=admin");
 
 autoIncrement.initialize(connection);
 var openConnection = function () {
@@ -29,7 +29,10 @@ var inventorySchema = new Schema({
   imageUrl: String
 });
 // inventorySchema.plugin(autoIncrement.plugin, 'productId');
-inventorySchema.plugin(autoIncrement.plugin, { model: 'productId', field: 'productId' });
+inventorySchema.plugin(autoIncrement.plugin, {
+  model: 'productId',
+  field: 'productId'
+});
 var inventory = mongoose.model("product", inventorySchema);
 
 /* GET api listing. */
@@ -50,7 +53,7 @@ router.get('/getProducts', (req, res) => {
 
 router.put('/updateProduct', (req, res) => {
   // openConnection();
-  inventory.findById(req.body._id , function (err, inventory) {
+  inventory.findById(req.body._id, function (err, inventory) {
     // Handle any possible database errors
     if (err) {
       res.status(500).send(err);
