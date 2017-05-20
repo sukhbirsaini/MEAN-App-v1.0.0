@@ -7,8 +7,8 @@ let builder = require('botbuilder')
 
 // Create chat connector with the default id and password
 let connector = new builder.ChatConnector({
-	appId: process.env.MICROSOFT_APP_ID,
-    appPassword: process.env.MICROSOFT_APP_PASSWORD
+	appId: 'f98507f6-efd6-4c28-8938-cf0dcf81d851',
+    appPassword: 'hF4jmbJsUd2X1eiN7ccEk6T'
 })
 
 let bot = new builder.UniversalBot(connector, (session)=>{
