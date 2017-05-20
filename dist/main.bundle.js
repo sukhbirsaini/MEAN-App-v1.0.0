@@ -40,7 +40,7 @@ var ProductService = (function () {
     function ProductService(_http, localStorageService) {
         this._http = _http;
         this.localStorageService = localStorageService;
-        this._productUrl = 'http://localhost:3000/api/';
+        this._productUrl = 'https://inventorymanagementapp.herokuapp.com/api/';
     }
     ProductService.prototype.getProducts = function () {
         var _this = this;
