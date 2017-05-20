@@ -8,8 +8,6 @@
   "scripts": {
     "ng": "ng",
     "start": "node .\\server\\server.js",
-    // "postinstall": "ng build --aot -prod",
-    // "preinstall": "npm install -g angular-cli",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
