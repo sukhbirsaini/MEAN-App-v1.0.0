@@ -35,13 +35,64 @@ inventorySchema.plugin(autoIncrement.plugin, {
 });
 var inventory = mongoose.model("product", inventorySchema);
 
-/* GET api listing. */
-router.get('/', (req, res) => {
-  res.send('api works');
+//filter product on price range and discount
+router.get('/filterProducts', (req, res) => {
+
+  // openConnection();
+  var minPrice = parseInt(req.query.minprice) || 1;
+  var minDis = parseInt(req.query.minDiscount) || 1;
+  var maxPrice = parseInt(req.query.maxprice) || 100;
+  var maxDiscount = parseInt(req.query.maxDiscount) || 100;
+
+  inventory.find({
+      $and: [{
+        price: {
+          $gte: minPrice,
+          $lte: maxPrice,
+        }
+      }, {
+        discountPercentage: {
+          $gte: minDis,
+          $lte: maxDiscount,
+        }
+      }]
+    })
+    .then(products => {
+      res.status(200).json(products);
+    })
+    .catch(error => {
+      res.status(500).send(error)
+    });
+});
+
+//filter product on name, type and availbility
+router.get('/filterProductWithTypeName', (req, res) => {
+
+  // openConnection();
+  var type = req.query.type || '';
+  var name = req.query.name || '';
+  var availbility = req.query.availbility || true;
+  filterObject = {
+    $or: [{
+      type: '/' + type + '/'
+    }, {
+      name: '/' + name + '/'
+    }, {
+      available: '/' + availbility + '/'
+    }]
+  };
+  inventory.find(filterObject)
+    .then(products => {
+      res.status(200).json(products);
+    })
+    .catch(error => {
+      res.status(500).send(error)
+    });
 });
 
 router.get('/getProducts', (req, res) => {
   // openConnection();
+
   inventory.find()
     .then(products => {
       res.status(200).json(products);
