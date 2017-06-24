@@ -143,6 +143,7 @@ bot.dialog('Search', [
 })
 // .reloadAction('showMenu', null, { matches: /^(menu|back)/i });
 
+
 var showingProducts = function (session) {
   filter = session.conversationData.filter;
   console.log("showing products url - " + _productUrl + '/getProducts');
