@@ -145,7 +145,7 @@ bot.dialog('Search', [
 
 var showingProducts = function (session) {
   filter = session.conversationData.filter;
-
+  console.log("showing products url - " + _productUrl + '/getProducts');
   // router.post('/api/getProducts', function (error, response, body) {
   request(_productUrl + '/getProducts', function (error, response, body) {
     if (error) {
