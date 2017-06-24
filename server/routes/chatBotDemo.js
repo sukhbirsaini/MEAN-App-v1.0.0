@@ -90,7 +90,7 @@ var searchBy = function (session) {
 bot.dialog('Search', [
   function (session, args, next) {
     session.dialogData.CategoriesFound = {
-      CategoryEntity_Name: builder.EntityRecognizer.findEntity(args.intent.entities, 'Categories::Name') ? builder.EntityRecognizer.findEntity(args.intent.entities, 'Categories::Name').name : '',
+      CategoryEntity_Name: builder.EntityRecognizer.findEntity(args.intent.entities, 'Categories::Name') ? builder.EntityRecognizer.findEntity(args.intent.entities, 'Categories::Name').type : '',
       CategoryEntity_Type: builder.EntityRecognizer.findEntity(args.intent.entities, 'Categories::Type') ? builder.EntityRecognizer.findEntity(args.intent.entities, 'Categories::Type').type : '',
       // CategoryEntity_Type: builder.EntityRecognizer.findEntity(args.intent.entities, 'Categories::Type').type,
       // CategoryEntity_Discount: builder.EntityRecognizer.findEntity(args.intent.entities, 'Categories::Discount').type,
