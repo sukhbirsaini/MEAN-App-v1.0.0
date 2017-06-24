@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 var request = require('request');
 var _ = require('lodash');
-
+var _productUrl = 'https://inventorymanagementapp.herokuapp.com/api';
 //Include the library botbuilder
 let builder = require('botbuilder')
 
@@ -145,7 +145,9 @@ bot.dialog('Search', [
 
 var showingProducts = function (session) {
   filter = session.conversationData.filter;
-  request('http://localhost:3000/api/getProducts', function (error, response, body) {
+
+  // router.post('/api/getProducts', function (error, response, body) {
+  request(_productUrl + '/getProducts', function (error, response, body) {
     if (error) {
       console.log('error:', error); // Print the error if one occurred
     } else {
