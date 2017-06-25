@@ -3,7 +3,7 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header page-scroll">
-      <a class="navbar-brand" [routerLink]="['/welcome']" >Retail Inventory Management</a>
+      <a class="navbar-brand" [routerLink]="['/welcome']">Retail Inventory Management</a>
     </div>
 
 
@@ -23,7 +23,10 @@
 <footer class="text-center">
   <div class="footer-above">
     <div class="container">
-      <iframe src='https://webchat.botframework.com/embed/inventorymanagementbot?s=6InstPddI2c.cwA.IAo.wO0mvS2iIBXakmzZA-mt63hmRC_idaGCCI0VvKiUWNo'></iframe>
+      <div id='botDiv' [style.height.px]="botHeight">
+        <div id='botTitleBar' (click)="changeBotHeight()"></div>
+        <iframe [style.width.px]="400" [style.height.px]="600" src='https://webchat.botframework.com/embed/inventorymanagementbot?s=6InstPddI2c.cwA.IAo.wO0mvS2iIBXakmzZA-mt63hmRC_idaGCCI0VvKiUWNo'></iframe>
+      </div>
     </div>
   </div>
   <div class="footer-below">

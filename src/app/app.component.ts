@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'app works!';
+  botHeight: number = 38;
+  changeBotHeight() {
+    this.botHeight = (this.botHeight == 600) ? 38 : 600;
+  }
 }
