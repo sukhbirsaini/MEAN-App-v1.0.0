@@ -175,6 +175,7 @@ var showingProducts = function (session) {
       showPro(productsFiltered, session);
     } else {
       productsFiltered = JSON.parse(body);
+      session.send("Showning all Products!");
       showPro(productsFiltered, session);
     }
   });
@@ -245,26 +246,6 @@ bot.dialog('Bye', [
 ]).triggerAction({
   matches: 'Bye'
 });
-
-
-// Spell Check : azure account expired for bing spell check api
-
-// if (process.env.IS_SPELL_CORRECTION_ENABLED === 'true') {
-//   bot.use({
-//     botbuilder: function (session, next) {
-//       spellService
-//         .getCorrectedText(session.message.text)
-//         .then(function (text) {
-//           session.message.text = text;
-//           next();
-//         })
-//         .catch(function (error) {
-//           console.error(error);
-//           next();
-//         });
-//     }
-//   });
-// }
 
 router.post('/', connector.listen());
 

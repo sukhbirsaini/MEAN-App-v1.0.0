@@ -1,0 +1,127 @@
+[
+	{
+		"text": "search by name of product",
+		"intent": "Search",
+		"entities": [
+			{
+				"entity": "Categories",
+				"startPos": 10,
+				"endPos": 14
+			}
+		]
+	},
+	{
+		"text": "search by type of product",
+		"intent": "Search",
+		"entities": [
+			{
+				"entity": "Categories",
+				"startPos": 10,
+				"endPos": 14
+			}
+		]
+	},
+	{
+		"text": "search by name and type of product",
+		"intent": "Search",
+		"entities": [
+			{
+				"entity": "Categories",
+				"startPos": 19,
+				"endPos": 23
+			},
+			{
+				"entity": "Categories",
+				"startPos": 10,
+				"endPos": 14
+			}
+		]
+	},
+	{
+		"text": "find me product by name",
+		"intent": "Search",
+		"entities": [
+			{
+				"entity": "Categories",
+				"startPos": 19,
+				"endPos": 22
+			}
+		]
+	},
+	{
+		"text": "i want products with name and type",
+		"intent": "Search",
+		"entities": [
+			{
+				"entity": "Categories",
+				"startPos": 21,
+				"endPos": 25
+			},
+			{
+				"entity": "Categories",
+				"startPos": 30,
+				"endPos": 33
+			}
+		]
+	},
+	{
+		"text": "remove known filters",
+		"intent": "ClearFilter",
+		"entities": []
+	},
+	{
+		"text": "clear search filters",
+		"intent": "ClearFilter",
+		"entities": []
+	},
+	{
+		"text": "clear filter",
+		"intent": "ClearFilter",
+		"entities": []
+	},
+	{
+		"text": "clear",
+		"intent": "ClearFilter",
+		"entities": []
+	},
+	{
+		"text": "show me the products you have",
+		"intent": "ShowAllProducts",
+		"entities": []
+	},
+	{
+		"text": "all products",
+		"intent": "ShowAllProducts",
+		"entities": []
+	},
+	{
+		"text": "what products do you have",
+		"intent": "ShowAllProducts",
+		"entities": []
+	},
+	{
+		"text": "show all products",
+		"intent": "ShowAllProducts",
+		"entities": []
+	},
+	{
+		"text": "show me what you got",
+		"intent": "ShowAllProducts",
+		"entities": []
+	},
+	{
+		"text": "show me everything",
+		"intent": "ShowAllProducts",
+		"entities": []
+	},
+	{
+		"text": "show",
+		"intent": "ShowAllProducts",
+		"entities": []
+	},
+	{
+		"text": "i want to see all products in your inventory",
+		"intent": "ShowAllProducts",
+		"entities": []
+	}
+]
