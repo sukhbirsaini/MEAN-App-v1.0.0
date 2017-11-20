@@ -234,7 +234,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation -->\r\n<nav id=\"mainNav\" class=\"navbar navbar-default navbar-fixed-top navbar-custom\">\r\n  <div class=\"container\">\r\n    <!-- Brand and toggle get grouped for better mobile display -->\r\n    <div class=\"navbar-header page-scroll\">\r\n      <a class=\"navbar-brand\" [routerLink]=\"['/welcome']\">Retail Inventory Management</a>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- /.container-fluid -->\r\n</nav>\r\n\r\n<!-- Header -->\r\n<header>\r\n\r\n  <div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</header>\r\n<!-- Footer -->\r\n<footer class=\"text-center\">\r\n  <div class=\"footer-above\">\r\n    <div class=\"container\">\r\n      <div id='botDiv' [style.height.px]=\"botHeight\">\r\n        <div id='botTitleBar' (click)=\"changeBotHeight()\"></div>\r\n        <iframe [style.width.px]=\"400\" [style.height.px]=\"600\" src='https://webchat.botframework.com/embed/inventorymanagementbot?s=6InstPddI2c.cwA.IAo.wO0mvS2iIBXakmzZA-mt63hmRC_idaGCCI0VvKiUWNo'></iframe>\r\n      </div>\r\n      <div id='botDiv2' [style.height.px]=\"botHeight\">\r\n        <div id='botTitleBar' (click)=\"changeBotHeight()\"></div>\r\n        <iframe [style.width.px]=\"400\" [style.height.px]=\"600\" src='https://webchat.botframework.com/embed/nagpTest?s=cX5Zdnz8zWA.cwA.pVI.1I2kaRyhbHAXgZ4_2uxe3CVfYLzBNcUCzY7grua2hHo'></iframe>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"footer-below\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n          Copyright &copy;Pvt. Lmt. 2017\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>"
+module.exports = "<!-- Navigation -->\r\n<nav id=\"mainNav\" class=\"navbar navbar-default navbar-fixed-top navbar-custom\">\r\n  <div class=\"container\">\r\n    <!-- Brand and toggle get grouped for better mobile display -->\r\n    <div class=\"navbar-header page-scroll\">\r\n      <a class=\"navbar-brand\" [routerLink]=\"['/welcome']\">Retail Inventory Management</a>\r\n    </div>\r\n\r\n\r\n  </div>\r\n  <!-- /.container-fluid -->\r\n</nav>\r\n\r\n<!-- Header -->\r\n<header>\r\n\r\n  <div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</header>\r\n<!-- Footer -->\r\n<footer class=\"text-center\">\r\n  <div class=\"footer-above\">\r\n    <div class=\"container\">\r\n      <div id='botDiv' [style.height.px]=\"botHeight\">\r\n        <div id='botTitleBar' (click)=\"changeBotHeight()\"></div>\r\n        <iframe [style.width.px]=\"400\" [style.height.px]=\"600\" src='https://webchat.botframework.com/embed/inventorymanagementbot?s=6InstPddI2c.cwA.IAo.wO0mvS2iIBXakmzZA-mt63hmRC_idaGCCI0VvKiUWNo'></iframe>\r\n      </div>\r\n      <div id='botDiv2' [style.height.px]=\"botHeight2\">\r\n        <div id='botTitleBar' (click)=\"changeBotHeight2()\"></div>\r\n        <iframe [style.width.px]=\"400\" [style.height.px]=\"600\" src='https://webchat.botframework.com/embed/nagpTest?s=cX5Zdnz8zWA.cwA.pVI.1I2kaRyhbHAXgZ4_2uxe3CVfYLzBNcUCzY7grua2hHo'></iframe>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"footer-below\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n          Copyright &copy;Pvt. Lmt. 2017\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>"
 
 /***/ }),
 
@@ -254,9 +254,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var AppComponent = (function () {
     function AppComponent() {
         this.botHeight = 38;
+        this.botHeight2 = 38;
     }
     AppComponent.prototype.changeBotHeight = function () {
         this.botHeight = (this.botHeight == 600) ? 38 : 600;
+    };
+    AppComponent.prototype.changeBotHeight2 = function () {
+        this.botHeight = (this.botHeight2 == 600) ? 38 : 600;
     };
     return AppComponent;
 }());
