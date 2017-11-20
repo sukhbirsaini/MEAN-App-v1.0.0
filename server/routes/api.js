@@ -7,7 +7,7 @@ mongoose.Promise = Promise;
 var Schema = mongoose.Schema;
 var autoIncrement = require('mongoose-auto-increment');
 
-var connection = mongoose.connect("mongodb://sukhbirsaini:ztOSgIgz2LqJsQzm@inventory-shard-00-00-5c6mc.mongodb.net:27017,inventory-shard-00-01-5c6mc.mongodb.net:27017,inventory-shard-00-02-5c6mc.mongodb.net:27017/inventory?ssl=true&replicaSet=Inventory-shard-0&authSource=admin");
+var connection = mongoose.connect(process.env.mongoDBConncectionString);
 
 autoIncrement.initialize(connection);
 var openConnection = function () {
@@ -45,18 +45,18 @@ router.get('/filterProducts', (req, res) => {
   var maxDiscount = parseInt(req.query.maxDiscount) || 100;
 
   inventory.find({
-      $and: [{
-        price: {
-          $gte: minPrice,
-          $lte: maxPrice,
-        }
-      }, {
-        discountPercentage: {
-          $gte: minDis,
-          $lte: maxDiscount,
-        }
-      }]
-    })
+    $and: [{
+      price: {
+        $gte: minPrice,
+        $lte: maxPrice,
+      }
+    }, {
+      discountPercentage: {
+        $gte: minDis,
+        $lte: maxDiscount,
+      }
+    }]
+  })
     .then(products => {
       res.status(200).json(products);
     })

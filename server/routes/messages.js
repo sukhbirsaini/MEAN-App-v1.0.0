@@ -1,25 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const aws = require('aws-sdk');
-let s3 = new aws.S3({
-  accessKeyId: process.env.S3_KEY
-});
 
 //Include the library botbuilder
 let builder = require('botbuilder')
 
 // Create chat connector with the default id and password
 let connector = new builder.ChatConnector({
-  appId: '07ba745f-24ec-4e2b-b841-d898016526ea',
-  appPassword: 'vnwvcfPVJA69=]hCBY362!%'
+  appId: process.env.microsoftChatBot2AppID,
+  appPassword: process.env.microsoftChatBot2Password
 })
 
 var bot = new builder.UniversalBot(connector, function (session) {
   session.send(process.env.S3_KEY);
-  session.send(s3.accessKeyId);
 });
 
-var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/9f1d74f2-f379-4f0a-b41d-5a5e460c1c29?subscription-key=84ac1bb781c64202b63e755f00314733&verbose=true&timezoneOffset=0&q=');
+var recognizer = new builder.LuisRecognizer(process.env.LuisQueryURLForChatBOT2);
 bot.recognizer(recognizer);
 
 

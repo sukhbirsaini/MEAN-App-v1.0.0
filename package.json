@@ -24,7 +24,6 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "angular-2-local-storage": "^1.0.1",
-    "aws-sdk": "^2.153.0",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "bootstrap": "^4.0.0-alpha.6",

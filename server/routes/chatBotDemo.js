@@ -9,13 +9,13 @@ let builder = require('botbuilder');
 
 // Create chat connector with the default id and password
 let connector = new builder.ChatConnector({
-  appId: 'f98507f6-efd6-4c28-8938-cf0dcf81d851',
-  appPassword: 'hF4jmbJsUd2X1eiN7ccEk6T'
+  appId: process.env.microsoftChatBot1AppID,
+  appPassword: process.env.microsoftChatBot1Password
 });
 
 var bot = new builder.UniversalBot(connector);
 
-var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/005d9add-f16f-4a67-b589-ee83530fc99a?subscription-key=84ac1bb781c64202b63e755f00314733&timezoneOffset=0&verbose=true&spellCheck=true&q=');
+var recognizer = new builder.LuisRecognizer(process.env.LuisQueryURLForChatBOT1);
 bot.recognizer(recognizer);
 
 bot.dialog('/', function (session, args) {
