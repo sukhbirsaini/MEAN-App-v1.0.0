@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, '../dist')));
 
 // Set our api routes
 app.use('/api', api);
-app.use('/messages', messages);
+app.use('/chatBotTest', messages);
 app.use('/chatBotDemoClass', chatBotDemo);
 
 // Catch all other routes and return the index file
