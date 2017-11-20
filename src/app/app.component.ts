@@ -13,6 +13,6 @@ export class AppComponent {
     this.botHeight = (this.botHeight == 600) ? 38 : 600;
   }
   changeBotHeight2() {
-    this.botHeight = (this.botHeight2 == 600) ? 38 : 600;
+    this.botHeight2 = (this.botHeight2 == 600) ? 38 : 600;
   }
 }

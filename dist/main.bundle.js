@@ -260,7 +260,7 @@ var AppComponent = (function () {
         this.botHeight = (this.botHeight == 600) ? 38 : 600;
     };
     AppComponent.prototype.changeBotHeight2 = function () {
-        this.botHeight = (this.botHeight2 == 600) ? 38 : 600;
+        this.botHeight2 = (this.botHeight2 == 600) ? 38 : 600;
     };
     return AppComponent;
 }());
