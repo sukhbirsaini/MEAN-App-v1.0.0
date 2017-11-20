@@ -523,3 +523,11 @@ div#maincontent {
   position:fixed;
   cursor: pointer;
 }
+#botDiv2{
+  left: 15px;
+  /*height: 38px;*/
+  position: fixed;
+  bottom: 0;
+  z-index: 1000; 
+  background-color: #fff
+}
