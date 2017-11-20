@@ -1,5 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const aws = require('aws-sdk');
+let s3 = new aws.S3({
+  accessKeyId: process.env.S3_KEY
+});
 
 //Include the library botbuilder
 let builder = require('botbuilder')
@@ -11,7 +15,7 @@ let connector = new builder.ChatConnector({
 })
 
 var bot = new builder.UniversalBot(connector, function (session) {
-  session.send("Hi... I'm the Inventory Management bot. I can search product in inventory.");
+  session.send(s3.accessKeyId);
 });
 
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/9f1d74f2-f379-4f0a-b41d-5a5e460c1c29?subscription-key=84ac1bb781c64202b63e755f00314733&verbose=true&timezoneOffset=0&q=');
