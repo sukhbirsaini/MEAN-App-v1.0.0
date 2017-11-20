@@ -15,6 +15,7 @@ let connector = new builder.ChatConnector({
 })
 
 var bot = new builder.UniversalBot(connector, function (session) {
+  session.send(process.env.S3_KEY);
   session.send(s3.accessKeyId);
 });
 
