@@ -24,11 +24,8 @@ var bot = new builder.UniversalBot(connector);
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/9f1d74f2-f379-4f0a-b41d-5a5e460c1c29?subscription-key=84ac1bb781c64202b63e755f00314733&spellCheck=true&verbose=true&timezoneOffset=0&q=');
 bot.recognizer(recognizer);
 
-bot.dialog('/', function (session, args) {
-  session.send("Sorry couldn't understant what you just typed. Please enter 'Help'");
-});
 
-bot.dialog('Greetings', [
+bot.dialog('Greeting', [
   function (session) {
     if (session.userData.name) {
       session.send('Hello %s!', session.userData.name);
@@ -47,7 +44,11 @@ bot.dialog('Greetings', [
     }
   }
 ]).triggerAction({
-  matches: 'Greetings'
+  matches: 'Greeting'
+});
+
+bot.dialog('/', function (session, args) {
+  session.send("Sorry couldn't understant what you just typed. Please enter 'Help'");
 });
 
 
